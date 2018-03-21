@@ -1,6 +1,6 @@
 Welcome to Dockerizing Spring boot Java App!!!
 follow below steps for building Docker images and running Docker containers from images
-
+Make sure you open port 8085 in security firewall.
 Steps:
 
 1. Make sure you clone the repo locally.
@@ -17,8 +17,13 @@ mvn clean install
 
 sudo docker build -t ananthkannan/myspringbootapp . 
 
+(make sure you change per your username
+
 5. verify by you have built images successfully
 sudo docker images
+
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+ananthkannan/springbootapp   latest              69c91142dca6        13 minutes ago      302MB
 
 6. Now run the Docker container from the Docker image you built
 sudo docker run -p 8085:8085 ananthkannan/myspringbootapp
