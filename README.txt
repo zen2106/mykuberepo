@@ -1,6 +1,8 @@
 Welcome to Dockerizing Spring boot Java App!!!
 follow below steps for building Docker images and running Docker containers from images
-Make sure you open port 8085 in security firewall.
+Make sure you open port 8085 in security firewall. also install Java and Maven.
+
+
 Steps:
 
 1. Make sure you clone the repo locally.
