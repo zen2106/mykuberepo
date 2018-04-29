@@ -13,6 +13,8 @@ git clone https://bitbucket.org/ananthkannan/myawesomeangularapprepo
 cd ~/myawesomeangularapprepo/MyAwesomeApp/
 
 3. now run the maven build to make sure you are able to build springboot Jar
+sudo apt install maven
+
 mvn clean install
 
 4.once you are able build springboot Jar, next step is build docker images
