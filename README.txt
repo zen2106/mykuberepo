@@ -30,7 +30,7 @@ REPOSITORY                   TAG                 IMAGE ID            CREATED    
 ananthkannan/springbootapp   latest              69c91142dca6        13 minutes ago      302MB
 
 6. Now run the Docker container from the Docker image you built
-sudo docker run -p 8085:8085 ananthkannan/myspringbootapp
+sudo docker run -p 8085:8085 user_name/myspringbootapp
 
 7. Now go to browser, and access public DNS name with port 8085
 you should see the springboot web app page running
