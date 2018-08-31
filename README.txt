@@ -22,7 +22,7 @@ mvn clean install
 
 4.once you are able build springboot Jar, next step is build docker images
 
-sudo docker build -t ananthkannan/myspringbootapp . 
+sudo docker build -t your_docker_id/myspringbootapp . 
 
 (make sure you change per your username
 
@@ -30,10 +30,10 @@ sudo docker build -t ananthkannan/myspringbootapp .
 sudo docker images
 
 REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
-ananthkannan/springbootapp   latest              69c91142dca6        13 minutes ago      302MB
+your_docker_id/springbootapp   latest              69c91142dca6        13 minutes ago      302MB
 
 6. Now run the Docker container from the Docker image you built
-sudo docker run -p 8085:8085 user_name/myspringbootapp
+sudo docker run -p 8085:8085 your_docker_id/myspringbootapp
 
 7. Now go to browser, and access public DNS name with port 8085
 you should see the springboot web app page running
