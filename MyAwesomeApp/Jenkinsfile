@@ -30,8 +30,15 @@ node {
         }
     }
     
+       stage('docker stop container') {
+            sh 'docker ps -f name=myContainer -q | xargs --no-run-if-empty docker container stop'
+            sh 'docker container ls -a -fname=myContainer -q | xargs -r docker container rm'
+
+       }
+
     stage ('Docker run') {
-        image.run("-p 8085:8085 --rm --name myfirstApp")
+
+        image.run("-p 8085:8085 --rm --name myContainer")
 
     }
 }
