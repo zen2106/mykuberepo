@@ -1,3 +1,4 @@
+
 node {
   
   def image
@@ -5,8 +6,9 @@ node {
 
   
      stage ('checkout') {
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://bitbucket.org/ananthkannan/myawesomeangularapprepo/']]])
-    }
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9ffd4ee4-3647-4a7d-a357-5e8746463282', url: 'https://bitbucket.org/ananthkannan/myawesomeangularapprepo/']]])       
+        }
+    
     
     stage ('Build') {
             sh 'mvn -f MyAwesomeApp/pom.xml clean package'            
@@ -20,7 +22,7 @@ node {
          // Build and push image with Jenkins' docker-plugin
         withDockerServer([uri: "tcp://localhost:4243"]) {
 
-            withDockerRegistry([credentialsId: "b2be3c66-3102-4aac-b88f-e0a6b355d8c4", url: "https://index.docker.io/v1/"]) {
+            withDockerRegistry([credentialsId: "1ae9f8ea-826b-4d2c-9a11-344647f3cdf3", url: "https://index.docker.io/v1/"]) {
             image = docker.build("ananthkannan/mywebapp", "MyAwesomeApp")
             image.push()
             
