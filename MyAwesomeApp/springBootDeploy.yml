@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  labels:
+    app: ak-angular-app
+  name: ak1-controller
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ak-angular-app
+    spec:
+      containers:
+      - image: ananthkannan/myawsomeapp:latest
+        name: ak-angular-app
+        ports: 
+        - name: ak-angular-app
+          containerPort: 8085
+---
+# Node Port Service
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: ak-angular-app
+  name: ak-angular-app
+spec:
+  type: NodePort
+  ports:
+    - port: 8085
+      targetPort: 8085
+  selector:
+    name: ak-angular-app
+---
