@@ -12,7 +12,7 @@ spec:
         app: ak-angular-app
     spec:
       containers:
-      - image: ananthkannan/myawsomeapp:latest
+      - image: ananthkannan/myspringbootapp:latest
         name: ak-angular-app
         ports: 
         - name: ak-angular-app
