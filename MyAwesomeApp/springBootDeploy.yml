@@ -9,7 +9,7 @@ spec:
   template:
     metadata:
       labels:
-        app: ak-angular-app
+        name: ak-angular-app
     spec:
       containers:
       - image: ananthkannan/myspringbootapp:latest
