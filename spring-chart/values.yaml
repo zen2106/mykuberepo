@@ -5,20 +5,20 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
-  pullPolicy: IfNotPresent
+  repository: ananthkannan/myspringbootapp
+  tag: latest
+  pullPolicy: Always
 
 imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+nameOverride: "ak-angular"
+fullnameOverride: "ak-angular-app"
 
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: ""
+  name: "ak-angular-svc"
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -32,8 +32,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 80
+  type: LoadBalancer
+  port: 8085
 
 ingress:
   enabled: false
